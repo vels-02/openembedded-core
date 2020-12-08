@@ -87,12 +87,6 @@ PACKAGECONFIG[x265]            = "-Dx265=enabled,-Dx265=disabled,x265"
 
 EXTRA_OEMESON += " \
     -Ddoc=disabled \
-    -Ddecklink=enabled \
-    -Ddvb=enabled \
-    -Dfbdev=enabled \
-    -Dipcpipeline=enabled \
-    -Dshm=enabled \
-    -Dtranscode=enabled \
     -Dandroidmedia=disabled \
     -Dapplemedia=disabled \
     -Davtp=disabled \

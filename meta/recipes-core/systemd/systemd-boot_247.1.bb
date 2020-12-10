@@ -1,6 +1,9 @@
 require systemd.inc
 FILESEXTRAPATHS =. "${FILE_DIRNAME}/systemd:"
 
+SRC_URI += "file://0001-meson-set-cxx-variable-before-using-it.patch \
+           "
+
 require conf/image-uefi.conf
 
 DEPENDS = "intltool-native libcap util-linux gnu-efi gperf-native"

@@ -603,6 +603,13 @@ RRECOMMENDS_${PN} += "systemd-extra-utils \
                       systemd-conf \
 "
 
+# Weak dlopen-style dependencies: if explicitly requested via PACKAGECONFIG, recommend them
+RRECOMMENDS_${PN} += "${@bb.utils.contains('PACKAGECONFIG', 'qrencode', 'qrencode', '', d)} \
+                      ${@bb.utils.contains('PACKAGECONFIG', 'libidn', 'libidn', '', d)} \
+                      ${@bb.utils.contains('PACKAGECONFIG', 'libidn2', 'libidn2', '', d)} \
+                      ${@bb.utils.contains('PACKAGECONFIG', 'cryptsetup', 'cryptsetup', '', d)} \
+"
+
 INSANE_SKIP_${PN} += "dev-so libdir"
 INSANE_SKIP_${PN}-dbg += "libdir"
 INSANE_SKIP_${PN}-doc += " libdir"
